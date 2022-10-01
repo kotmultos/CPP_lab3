@@ -1,0 +1,3 @@
+Diakoniuk;CPP;Masiuk,Luckyk,Beynik
+Pavych;DB;Makhtiy,Beynik,Shpak
+Khalak;KRPZ;Sopotnytska,Momont,Chorniy

@@ -1,38 +1,42 @@
 package lab3.manager;
 
+import lab3.Lector;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuManager {
 
-    public void start() {
+    public static void start() {
+        OutputManager.SetMenuVariants();
+
         Scanner scanner = new Scanner(System.in);
         int userInput = -1;
 
         do {
-            System.out.print("""
-                    -----
-                    0. Вивести вхідну інформацію на екран
-                    1. Створити таблицю, в першій колонці якої є прізвище студента, а в другій – перелік дисциплін, які він слухає.
-                    2. Створити список студентів, які зараховані на всі дисципліни. Визначити спільних слухачів 2 заданих курсів.
-                    3. З 2 різних файлів зчитати 2 вихідні набори інформації про викладачів. Створити спільну колекцію,
-                       яка складатиметься з усіх викладачів, які мають кількість курсів вищу, від середньої по узагальненій колекції, без повторів.
-                    4. Завершити роботу програми
-                    ---->""");
+            OutputManager.ShowMenu();
+
+            // створити список викладач - предмет - масив студентів --- вхідна інформація
+            // створитит мапу<k,v> студент - масив предметів
+            // задання 2 курсів вручну і пошук для них спільних слухачів -- також через якусь колекцію певно треба зробити
+            // створити колекцію з викладачів з обох файлів - цікаво, теж якась колекція
+            // піду вже спати крч
+
 
             try {
                 userInput = Integer.parseInt(scanner.next());
             }
             catch (NumberFormatException e) {
-//                System.out.println(e);
+                System.out.println(e);
                 userInput = -1;
             }
 
             switch (userInput) {
                 case 0:
-
+                    TaskManager.ShowInputData();
                     break;
                 case 1:
-
+                    TaskManager.CreateStudentDisciplineTable();
                     break;
                 case 2:
 
@@ -44,7 +48,7 @@ public class MenuManager {
                     System.out.println("--\nРоботу програми завершено!\n--");
                     break;
                 default:
-                    System.out.println("--\nВведено неправильну цифру\n--");
+                    System.out.println("--\nВведено неправильну цифру. Повторіть спробу\n--");
             }
         } while (userInput != 4);
     }

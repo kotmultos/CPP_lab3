@@ -4,9 +4,7 @@ import lab3.manager.MenuManager;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello");
-        MenuManager menu = new MenuManager();
-        menu.start();
+        MenuManager.start();
     }
 }
 
