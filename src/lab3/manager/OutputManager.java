@@ -43,4 +43,12 @@ public class OutputManager {
         System.out.println(header);
         System.out.println(list);
     }
+
+    public static void ShowLectorCoursesMap(String description, Map<String, Integer> map) {
+        System.out.println(description);
+        System.out.println(String.format("%-16s%s", "Lector", "Number of courses"));
+        for (var key: map.keySet()) {
+            System.out.println(String.format("%-16s%s", key, map.get(key)));
+        }
+    }
 }

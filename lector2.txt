@@ -1,3 +1,5 @@
 Serdyuk;KPZ;Behei,Chorniy,Shpak
 Levus;CG;Behei,Luchyk,Sopotnytska
 Hrytsіuk;AVPZ;Shpak,Chishchenko,Chorniy
+Levus;VIPZ;Luchyk,Chorniy,Behei,Shpak,Senyk
+Levus;Another course;Beynik,Shpak,Murenets

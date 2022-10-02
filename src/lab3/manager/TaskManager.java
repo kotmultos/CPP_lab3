@@ -88,12 +88,50 @@ public class TaskManager {
         }
         else {
             for (var students1: inputDataFile1.get(i1).getStudentsList()) {
-                System.out.println(students1);
                 if(inputDataFile1.get(i2).getStudentsList().contains(students1)) {
                     commonStudents.add(students1);
                 }
             }
             OutputManager.ShowStudentsList("Спільні студенти з курсів " + discipline1 + " та " + discipline2, commonStudents);
         }
+    }
+
+    public static void FindLectorsWithMoreThanAvgCourses() {
+        Map<String, Integer> res = new HashMap<>();
+        List<Lector> allLectorsList = new ArrayList<>();
+
+        allLectorsList.addAll(inputDataFile1);
+        allLectorsList.addAll(inputDataFile2);
+
+//        OutputManager.ShowLectorList(allLectorsList);
+        Map<String, Integer> lectorCoursesCountMap = new HashMap<>();
+        Set<String> lectorSurnames = new HashSet<>();
+        for (var lector: allLectorsList) {
+            lectorSurnames.add(lector.getSurname());
+        }
+
+        for (var lectorSurname: lectorSurnames) {
+            lectorCoursesCountMap.put(lectorSurname, 0);
+        }
+
+        for (var key: lectorCoursesCountMap.keySet()) {
+            for (var lector : allLectorsList) {
+                if (lector.getSurname().equals(key)) {
+                    lectorCoursesCountMap.put(key, lectorCoursesCountMap.get(key) + 1);
+                }
+            }
+        }
+
+        OutputManager.ShowLectorCoursesMap("Кількість курсів у кожного викладача:", lectorCoursesCountMap);
+        int averCount = 0;
+        for (var value: lectorCoursesCountMap.values()) { averCount+=value;}
+        averCount /= lectorCoursesCountMap.size();
+
+        for (var key: lectorCoursesCountMap.keySet()) {
+            if(lectorCoursesCountMap.get(key) > averCount) {
+                res.put(key, lectorCoursesCountMap.get(key));
+            }
+        }
+        OutputManager.ShowLectorCoursesMap("Викладачі, які мають курсів більше, ніж середня кількість (" + averCount +"):", res);
     }
 }

@@ -1,10 +1,5 @@
 package lab3.manager;
 
-import lab3.Lector;
-
-import java.util.List;
-import java.util.Scanner;
-
 public class MenuManager {
 
     public static void start() {
@@ -14,13 +9,6 @@ public class MenuManager {
 
         do {
             OutputManager.ShowMenu();
-
-            // створити список викладач - предмет - масив студентів --- вхідна інформація
-            // створитит мапу<k,v> студент - масив предметів
-            // задання 2 курсів вручну і пошук для них спільних слухачів -- також через якусь колекцію певно треба зробити
-            // створити колекцію з викладачів з обох файлів - цікаво, теж якась колекція
-            // піду вже спати крч
-
             userInput = InputManager.GetUserInputInt();
 
             switch (userInput) {
@@ -35,7 +23,7 @@ public class MenuManager {
                     TaskManager.FindCommonStudentsOfDisciplines();
                     break;
                 case 3:
-
+                    TaskManager.FindLectorsWithMoreThanAvgCourses();
                     break;
                 case 4:
                     System.out.println("--\nРоботу програми завершено!\n--");
