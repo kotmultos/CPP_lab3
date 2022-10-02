@@ -1,3 +1,3 @@
-Diakoniuk;CPP;Masiuk,Luckyk,Beynik
-Pavych;DB;Makhtiy,Beynik,Shpak
-Khalak;KRPZ;Sopotnytska,Momont,Chorniy
+Diakoniuk;CPP;Masiuk,Luckyk,Beynik,Good student
+Pavych;DB;Makhtiy,Beynik,Shpak,Good student
+Khalak;KRPZ;Sopotnytska,Momont,Chorniy,Good student

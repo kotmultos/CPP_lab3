@@ -9,7 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileManager {
+public class InputManager {
+    static Scanner scanner = new Scanner(System.in);
     public static List<Lector> GetLectorsFromFile(String filename) {
         ArrayList<Lector> res = new ArrayList<Lector>();
 
@@ -26,6 +27,22 @@ public class FileManager {
             System.out.println(e);
             return new ArrayList<Lector>();
         }
+        return res;
+    }
+    public static int GetUserInputInt(){
+        int res;
+        try {
+            res = Integer.parseInt(scanner.next());
+        }
+        catch (NumberFormatException e) {
+            System.out.println(e);
+            res = -1;
+        }
+        return res;
+    }
+    public static String GetUserInputString(String description) {
+        System.out.print(description);
+        String res = scanner.next();
         return res;
     }
 }

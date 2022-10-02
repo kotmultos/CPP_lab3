@@ -38,4 +38,9 @@ public class OutputManager {
             System.out.println(String.format("%-16s%s", key, map.get(key)));
         }
     }
+
+    public static void ShowStudentsList(String header, List<String> list) {
+        System.out.println(header);
+        System.out.println(list);
+    }
 }

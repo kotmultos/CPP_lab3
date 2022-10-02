@@ -10,8 +10,7 @@ public class MenuManager {
     public static void start() {
         OutputManager.SetMenuVariants();
 
-        Scanner scanner = new Scanner(System.in);
-        int userInput = -1;
+        int userInput;
 
         do {
             OutputManager.ShowMenu();
@@ -22,14 +21,7 @@ public class MenuManager {
             // створити колекцію з викладачів з обох файлів - цікаво, теж якась колекція
             // піду вже спати крч
 
-
-            try {
-                userInput = Integer.parseInt(scanner.next());
-            }
-            catch (NumberFormatException e) {
-                System.out.println(e);
-                userInput = -1;
-            }
+            userInput = InputManager.GetUserInputInt();
 
             switch (userInput) {
                 case 0:
@@ -39,7 +31,8 @@ public class MenuManager {
                     TaskManager.CreateStudentDisciplineTable();
                     break;
                 case 2:
-
+                    TaskManager.FindStudentsFromAllCourses();
+                    TaskManager.FindCommonStudentsOfDisciplines();
                     break;
                 case 3:
 
