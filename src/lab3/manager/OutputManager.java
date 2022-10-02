@@ -4,6 +4,7 @@ import lab3.Lector;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class OutputManager {
     static List<String> menuVariants = new ArrayList<String>();
@@ -28,6 +29,13 @@ public class OutputManager {
     public static void ShowLectorList(List<Lector> list) {
         for (var item: list) {
             System.out.println(item);
+        }
+    }
+
+    public static void ShowStudentDisciplineMap(Map<String, List<String>> map) {
+        System.out.println(String.format("%-16s%s", "Student", "Course"));
+        for (String key: map.keySet()) {
+            System.out.println(String.format("%-16s%s", key, map.get(key)));
         }
     }
 }

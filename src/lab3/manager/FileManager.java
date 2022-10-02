@@ -19,14 +19,12 @@ public class FileManager {
                 String tmp = scan.nextLine();
                 String[] arrTmp = tmp.split(";");
                 String [] students = arrTmp[2].split(",");
-                res.add(new Lector(arrTmp[0], arrTmp[1], Arrays.asList(arrTmp[2])));
+                res.add(new Lector(arrTmp[0], arrTmp[1], Arrays.asList(students)));
             }
         } catch (IOException e) {
-            System.out.println("An error occured while reading from file.///");
+            System.out.println("An error occurred while reading from file./// filename: " + filename);
             System.out.println(e);
             return new ArrayList<Lector>();
-//            throw new RuntimeException(e);
-
         }
         return res;
     }
